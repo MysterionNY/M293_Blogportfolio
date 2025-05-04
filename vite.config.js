@@ -1,14 +1,14 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  root: 'src',           // Entwicklungs­ordner
+  root: 'src',
   build: {
-    outDir: '../dist',   // Ausgabepfad
+    outDir: '../dist',
     emptyOutDir: true
   },
   css: {
     preprocessorOptions: {
-      scss: { additionalData: '@import \"_variables\";' } // falls du globale Vars hast
+      scss: { additionalData: '@import \"_variable\";' }
     },
     postcss: 'postcss.config.js'
   }

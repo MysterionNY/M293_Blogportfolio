@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    loadPartial('header', '/header.html');
-    loadPartial('footer', '/footer.html');
+    loadPartial('header', 'header.html');
+    loadPartial('footer', 'footer.html');
   });
   
   function loadPartial(targetId, url) {
