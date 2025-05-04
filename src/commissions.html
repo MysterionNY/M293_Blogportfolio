@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commissions</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="/src/assets/css/main.css" />
+  <style>
+  </style>
+</head>
+<body>
+  <!-- HEADER PARTIAL -->
+  <div id="header"></div>
+
+
+  <main class="container">
+    <section class="blog-hero">
+      <h1>Commission Rates</h1>
+      <p>Transparente Preise für Autosplitter‑ und SRT‑Entwicklung. Bezahlt wird erst, wenn das Projekt abgeschlossen ist.</p>
+    </section>
+
+
+    <!-- SINGLE METHODS + PACKAGES -->
+    <section class="section">
+      <h2 class="section-heading"><i class="fas fa-coins"></i> Autosplitter</h2>
+      <div class="rates-grid">
+        <!-- Single methods -->
+        <div class="rate-card"><div class="rate-header">Single Methods</div><div class="rate-body"><ul><li>Start: <strong>20 €</strong></li><li>Level‑based Splits: <strong>40 €</strong></li><li>Special Splitting / Sub‑Splits: <strong>+50 €</strong></li><li>Reset: <strong>20 €</strong></li><li>Load‑Remover (LRT): <strong>35 €</strong></li></ul></div></div>
+
+        <!-- Package A -->
+        <div class="rate-card"><div class="rate-header">Package A</div><div class="rate-body"><ul><li>Start</li><li>Split</li><li>Reset</li></ul><strong>70 €</strong></div></div>
+        <!-- Package B -->
+        <div class="rate-card"><div class="rate-header">Package B</div><div class="rate-body"><ul><li>Start</li><li>Split</li><li>Load‑Remover</li></ul><strong>85 €</strong></div></div>
+        <!-- Package C -->
+        <div class="rate-card"><div class="rate-header">Package C</div><div class="rate-body"><ul><li>Start</li><li>Split</li><li>Reset</li><li>Load‑Remover</li></ul><strong>100 €</strong></div></div>
+        <!-- Package D -->
+        <div class="rate-card"><div class="rate-header">Package D</div><div class="rate-body"><ul><li>Start</li><li>Split + Sub‑Splits</li><li>Reset</li><li>Load‑Remover</li></ul><strong>140 €</strong><br><small>+50 € pro weitere Kategorie</small></div></div>
+      </div>
+    </section>
+
+    <!-- SRT PRICING -->
+    <section class="section">
+      <h2 class="section-heading"><i class="fas fa-chart-line"></i> SRT Overlays</h2>
+      <div class="rates-grid">
+        <div class="rate-card"><div class="rate-header">Base SRT</div><div class="rate-body"><ul><li>Player HP</li><li>Enemy HP</li><li>1 Extra Request</li></ul><strong>175 €</strong></div></div>
+        <div class="rate-card"><div class="rate-header">Inventory Add‑on</div><div class="rate-body"><p>Live‑Inventar</p><strong>+150 €</strong></div></div>
+        <div class="rate-card"><div class="rate-header">Weiteres Feature</div><div class="rate-body"><p>z. B. DA, Velocity …</p><strong>+35 € / Feature</strong></div></div>
+      </div>
+    </section>
+
+    <!-- GENERAL INFO -->
+    <section class="section">
+      <h2 class="section-heading"><i class="fas fa-info-circle"></i> Allgemeines</h2>
+      <ul class="info-list">
+        <li>+25 % Aufschlag für zusätzliche Game‑Versionen (Steam, Epic, GoG …)</li>
+        <li>Re‑Works bereits existierender Splitter nach Absprache.</li>
+        <li>Mehraufwand (Reverse Engineering, Signature Scans, ASL‑Helper …) 25–75 % Aufpreis.</li>
+        <li>Spezifische Deadlines nach Absprache und Aufpreis.</li>
+        <li>Zahlung erst nach Fertigstellung (oder Teilzahlung möglich).</li>
+        <li>Akzeptierte Zahlungsmethoden: Banküberweisung, PayPal, Krypto (BTC, ETH, XRP).</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section class="section" id="commission-contact">
+      <h2 class="section-heading"><i class="fas fa-envelope"></i> Anfrage stellen</h2>
+      <form class="contact-form" action="mailto:mert2003@live.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Name*" required>
+        <input type="email" name="email" placeholder="E‑Mail*" required>
+        <select name="service">
+          <option value="autosplitter">Autosplitter</option>
+          <option value="srt">SRT Overlay</option>
+          <option value="beratung">Beratung / Sonstiges</option>
+        </select>
+        <textarea name="message" placeholder="Projekt‑Details*" required></textarea>
+        <button type="submit" class="btn btn-primary">Send Inquiry</button>
+      </form>
+      <p class="note" style="margin-top:1rem;text-align:center">Mit dem Klick auf „Send“ wird dein Mail‑Client geöffnet (kein Server‑Backend nötig).</p>
+    </section>
+  </main>
+
+  <!-- FOOTER PARTIAL -->
+  <div id="footer"></div>
+
+  <script type="module" src="/src/assets/js/partials-loader.js"></script>
+  <script type="module" src="/src/assets/js/mobile-menu.js"></script>
+</body>
+</html>

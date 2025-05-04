@@ -1,0 +1,54 @@
+/* src/assets/scss/modal.scss */
+@use 'variable' as v;
+@use 'helpers'   as h;      //  ← helpers‐Namespace „h“
+
+/* Modal Backdrop */
+.post-modal{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.8);
+
+  /* ↓ Mixin mit Namespace! */
+  @include h.flex-center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s;
+  z-index: 1000;
+
+  &.open{
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* Modal Content */
+.post-modal-content{
+  background: v.$clr-white;
+  color: v.$clr-dark;
+  border-radius: 8px;
+  max-width: 900px;
+  width: 95%;
+  max-height: 90vh;
+  overflow: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-modal-img{
+  width: 100%;
+  height: 580px;
+  object-fit: cover;
+}
+
+.post-modal-body{ padding: 1.5rem; line-height: 1.6; }
+
+.post-modal-close{
+  position: absolute; top: 10px; right: 15px;
+  font-size: 1.8rem; color: #fff;
+  background: rgba(0,0,0,.5);
+  width: 36px; height: 36px; border-radius: 50%;
+  @include h.flex-center;
+  cursor: pointer;
+}

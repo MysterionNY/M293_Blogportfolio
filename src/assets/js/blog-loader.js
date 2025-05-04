@@ -1,0 +1,12 @@
+document.querySelectorAll('.post-link').forEach(link=>{
+    link.addEventListener('click',e=>{
+      e.preventDefault();
+      document.getElementById(link.dataset.modal).classList.add('open');
+    });
+  });
+  document.querySelectorAll('.post-modal-close').forEach(btn=>{
+    btn.addEventListener('click',()=>btn.closest('.post-modal').classList.remove('open'));
+  });
+  document.querySelectorAll('.post-modal').forEach(modal=>{
+    modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
+  });

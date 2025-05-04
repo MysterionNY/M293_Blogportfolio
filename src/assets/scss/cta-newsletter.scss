@@ -1,0 +1,59 @@
+/* src/assets/scss/cta-newsletter.scss */
+@use 'variable' as v;
+@use 'helpers'   as h;      // Namespace „h“ für Mixins
+
+/* ─────────── CTA ─────────── */
+.cta{
+  background: v.$clr-light;
+  border-radius: v.$radius-lg;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  margin-top: 5rem;
+
+  h2{ font-size: 2rem; font-weight: 700; margin-bottom: 1rem }
+  p { font-size: 1.1rem; color: v.$clr-gray;
+      max-width: 40rem; margin: 0 auto 2rem }
+
+  .cta-actions{
+    @include h.flex-center(1rem);   // Mixin aus helpers
+    flex-wrap: wrap;
+  }
+}
+
+/* ─────────── NEWSLETTER ─────────── */
+.newsletter{
+  background: v.$clr-white;
+  border-radius: v.$radius-lg;
+  box-shadow: v.$shadow-md;
+  padding: 3rem 1.5rem;
+  margin-top: 5rem;
+  text-align: center;
+
+  h2{ font-size: 2rem; font-weight: 700; margin-bottom: .5rem }
+
+  p { color: v.$clr-gray;
+      max-width: 36rem;
+      margin: 0 auto 1.8rem }
+
+  .newsletter-form{
+    @include h.flex-center(1rem);
+    flex-direction: column;
+
+    @media (min-width: 480px){
+      flex-direction: row;
+    }
+
+    input{
+      flex: 1 1 240px;
+      padding: .75rem 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: v.$radius-sm;
+    }
+  }
+
+  .note{
+    font-size: .8rem;
+    color: v.$clr-gray;
+    margin-top: 1.25rem;
+  }
+}

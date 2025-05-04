@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/src/assets/css/portfolio.css" />
+  <link rel="stylesheet" href="/src/assets/css/header_footer.css" />
+</head>
+<body>
+  <!-- HEADER (Partial) -->
+  <div id="header"></div>
+
+  <!-- ╭──────── MAIN ────────╮ -->
+  <main class="container">
+    <!-- Intro -->
+    <section class="blog-hero">
+      <h1>Autosplitter‑Collection</h1>
+      <p>Alle laufenden / fertigen Autosplitter‑Projekte in einer Übersicht.</p>
+    </section>
+    <section class="intro">
+      <!-- Filter Controls -->
+      <div class="filters" aria-label="Project filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="autosplitter">Autosplitter</button>
+        <button class="filter-btn" data-filter="srt">SRT</button>
+        <button class="filter-btn" data-filter="srtpluginmanager">SRTPluginManager</button>
+      </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section id="portfolio-grid" class="portfolio-grid">
+      
+      <!-- Alien Shooter -->
+      <article class="portfolio-item" data-id="alien-shooter" data-category="autosplitter">
+        
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/AS.jpg" alt="Alien Shooter" /></div>
+          <div class="portfolio-overlay">
+            <h3>Alien Shooter</h3>
+            <p>Automatic Start &amp; Splits<br>Reset</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- Bayonetta -->
+      <article class="portfolio-item" data-id="bayonetta" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/Bayonetta.jpg" alt="Bayonetta" /></div>
+          <div class="portfolio-overlay">
+            <h3>Bayonetta</h3>
+            <p>Automatic Start &amp; Splits<br>Load‑Remover</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- Devil May Cry 1 -->
+      <article class="portfolio-item" data-id="dmc1" data-category="autosplitter">
+        <button class="bookmark-btn" aria-label="Merken">
+          <i class="fas fa-bookmark"></i>
+        </button>
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/DMC1.jpg" alt="Devil May Cry 1" /></div>
+          <div class="portfolio-overlay">
+            <h3>Devil May Cry 1</h3>
+            <p>Door &amp; Chapter Splits<br>Auto Start/Reset<br>Load‑Remover</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- Devil May Cry 2 -->
+      <article class="portfolio-item" data-id="dmc2" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/DMC2.jpg" alt="Devil May Cry 2" /></div>
+          <div class="portfolio-overlay">
+            <h3>Devil May Cry 2</h3>
+            <p>Door &amp; Chapter Splits<br>Auto Start/Reset</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- Devil May Cry 3 SE -->
+      <article class="portfolio-item" data-id="dmc3" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/DMC3.jpg" alt="Devil May Cry 3 SE" /></div>
+          <div class="portfolio-overlay">
+            <h3>DMC 3 Special Edition</h3>
+            <p>Door &amp; Chapter Splits (IL, Segment, Full‑run)<br>Auto Start/Reset (NG &amp; NG+)<br>Load‑Remover · Kill‑counter · Mission‑Timer</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- Devil May Cry 4 SE -->
+      <article class="portfolio-item" data-id="dmc4" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/DMC4.jpg" alt="Devil May Cry 4 SE" /></div>
+          <div class="portfolio-overlay">
+            <h3>DMC 4 Special Edition</h3>
+            <p>Door &amp; Chapter Splits · Bloody Palace<br>Auto Start/Reset · Load‑Remover</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- Final Fantasy Type‑0 -->
+      <article class="portfolio-item" data-id="ff0" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/FFType0.jpg" alt="Final Fantasy Type‑0" /></div>
+          <div class="portfolio-overlay">
+            <h3>Final Fantasy Type‑0</h3>
+            <p>Automatic Start &amp; Splits<br>Load‑Remover</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- Final Fantasy VII Remake -->
+      <article class="portfolio-item" data-id="ff7r" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/FF7R.jpg" alt="FF VII Remake" /></div>
+          <div class="portfolio-overlay">
+            <h3>FF VII Remake</h3>
+            <p>Chapter &amp; Boss Splits<br>Auto Start/Reset · Load‑Remover</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- Final Fantasy XV -->
+      <article class="portfolio-item" data-id="ff15" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/FF15.jpg" alt="Final Fantasy XV" /></div>
+          <div class="portfolio-overlay">
+            <h3>Final Fantasy XV</h3>
+            <p>Load‑Remover</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- Gun -->
+      <article class="portfolio-item" data-id="gun" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/Gun.jpg" alt="Gun" /></div>
+          <div class="portfolio-overlay">
+            <h3>Gun</h3>
+            <p>Automatic Start · Chapter Splits<br>Load‑Remover (NIU)</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- LOTR Gollum -->
+      <article class="portfolio-item" data-id="gollum" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/GollumLOTR.jpg" alt="LOTR Gollum" /></div>
+          <div class="portfolio-overlay">
+            <h3>LOTR – Gollum</h3>
+            <p>Auto Start/Reset<br>Chapter &amp; Sub‑Chapter Splits<br>Load‑Remover · Dual Version Support</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- Lost in Random -->
+      <article class="portfolio-item" data-id="lir" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/LiR.jpg" alt="Lost in Random" /></div>
+          <div class="portfolio-overlay">
+            <h3>Lost in Random</h3>
+            <p>Automatic Start · Load‑Remover</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- Pseudoregalia -->
+      <article class="portfolio-item" data-id="pseudoregalia" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/Pseudoregalia.png" alt="Pseudoregalia" /></div>
+          <div class="portfolio-overlay">
+            <h3>Pseudoregalia</h3>
+            <p>Auto Start · Area/Item/Golden Key/HP Splits<br>Load‑Remover</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- Remothered Broken Porcelain -->
+      <article class="portfolio-item" data-id="remotheredBP" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/RBP.jpg" alt="Remothered Broken Porcelain" /></div>
+          <div class="portfolio-overlay">
+            <h3>Remothered Broken Porcelain</h3>
+            <p>Auto Start &amp; Reset · Load‑Remover</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- Resident Evil 4 -->
+      <article class="portfolio-item" data-id="re4" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/RE4.jpg" alt="Resident Evil 4" /></div>
+          <div class="portfolio-overlay">
+            <h3>Resident Evil 4</h3>
+            <p>Door &amp; Chapter Splits · Key‑Item Splits<br>Auto Start/Reset · Load‑Remover</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- Resident Evil 5 -->
+      <article class="portfolio-item" data-id="re5" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/RE5.jpg" alt="Resident Evil 5" /></div>
+          <div class="portfolio-overlay">
+            <h3>Resident Evil 5</h3>
+            <p>Auto Start · Chapter/DLC/IL Splits<br>NG Load‑Remover · NG+ IGT</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- SANABI -->
+      <article class="portfolio-item" data-id="sanabi" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/Sanabi.jpg" alt="SANABI" /></div>
+          <div class="portfolio-overlay">
+            <h3>SANABI</h3>
+            <p>Level Splits · IGT Display</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- Samurai Jack -->
+      <article class="portfolio-item" data-id="sjbtt" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/SJGame.jpg" alt="Samurai Jack" /></div>
+          <div class="portfolio-overlay">
+            <h3>Samurai Jack: Battle Through Time</h3>
+            <p>Auto Start · Load‑Remover with IGT</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- Star Wars JFO -->
+      <article class="portfolio-item" data-id="swjfo" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/SWJFO.jpg" alt="Star Wars Jedi Fallen Order" /></div>
+          <div class="portfolio-overlay">
+            <h3>Star Wars Jedi Fallen Order</h3>
+            <p>Chapter Splits · Reset · Load‑Remover</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- The Evil Within -->
+      <article class="portfolio-item" data-id="tew" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/TEW.jpg" alt="The Evil Within" /></div>
+          <div class="portfolio-overlay">
+            <h3>The Evil Within</h3>
+            <p>Chapter Splits · Auto Start<br>Timer adjusted to IGT</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- The Evil Within 2 -->
+      <article class="portfolio-item" data-id="tew2" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/TEW2.jpg" alt="The Evil Within 2" /></div>
+          <div class="portfolio-overlay">
+            <h3>The Evil Within 2</h3>
+            <p>WIP</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+      <!-- Yakuza LAD -->
+      <article class="portfolio-item" data-id="yakuzalad" data-category="autosplitter">
+        <div class="portfolio-card">
+          <div class="portfolio-image"><img src="/src/assets/images/YakuzaLAD.jpg" alt="Yakuza Like a Dragon" /></div>
+          <div class="portfolio-overlay">
+            <h3>Yakuza: Like a Dragon</h3>
+            <p>Auto Start · Chapter &amp; Item Splits<br>Load‑Remover</p>
+          </div>
+          <button class="bookmark-btn" aria-label="Merken">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </article>
+
+    <article class="portfolio-item" data-id="dmc4srt" data-category="srt">
+      <div class="portfolio-card">
+        <div class="portfolio-image"><img src="/src/assets/images/DMC4.jpg" alt="DMC4 SE SRT" /></div>
+        <div class="portfolio-overlay">
+          <h3>DMC4 SE – SRT Overlay</h3>
+          <p>Player HP / DT · IGT · Currency · RoomID · Enemy HP · Game Version</p>
+        </div>
+        <button class="bookmark-btn" aria-label="Merken">
+          <i class="fas fa-bookmark"></i>
+        </button>
+      </div>
+    </article>
+
+    <!-- Elden Ring SRT -->
+    <article class="portfolio-item" data-id="ersrt" data-category="srt">
+      <div class="portfolio-card">
+        <div class="portfolio-image"><img src="/src/assets/images/ED.jpg" alt="Elden Ring" /></div>
+        <div class="portfolio-overlay">
+          <h3>Elden Ring – Boss Status Overlay</h3>
+          <p>DX‑Overlay zeigt <em>Alive/Dead</em> Status pro Boss in aktueller Zone · F1‑Hotkey toggles.</p>
+        </div>
+        <button class="bookmark-btn" aria-label="Merken">
+          <i class="fas fa-bookmark"></i>
+        </button>
+      </div>
+    </article>
+
+    <!-- Resident Evil 1 SRT -->
+    <article class="portfolio-item" data-id="re1srt" data-category="srt">
+      <div class="portfolio-card">
+        <div class="portfolio-image"><img src="/src/assets/images/BIO1.jpg" alt="Resident Evil 1" /></div>
+        <div class="portfolio-overlay">
+          <h3>Resident Evil 1 – SRT</h3>
+          <p>Player HP · Inventory · IGT · Game Version</p>
+        </div>
+        <button class="bookmark-btn" aria-label="Merken">
+          <i class="fas fa-bookmark"></i>
+        </button>
+      </div>
+    </article>
+
+    <!-- Resident Evil 4 SRT -->
+    <article class="portfolio-item" data-id="re4srt" data-category="srt">
+      <div class="portfolio-card">
+        <div class="portfolio-image"><img src="/src/assets/images/RE4.jpg" alt="Resident Evil 4" /></div>
+        <div class="portfolio-overlay">
+          <h3>Resident Evil 4 – SRT</h3>
+          <p>HP · Currency · DA · IGT · Kills (Current &amp; Chapter) · Last Item Pickup</p>
+        </div>
+        <button class="bookmark-btn" aria-label="Merken">
+          <i class="fas fa-bookmark"></i>
+        </button>
+      </div>
+    </article>
+
+    <!-- Resident Evil 5 SRT -->
+    <article class="portfolio-item" data-id="re5srt" data-category="srt">
+      <div class="portfolio-card">
+        <div class="portfolio-image"><img src="/src/assets/images/RE5.jpg" alt="Resident Evil 5" /></div>
+        <div class="portfolio-overlay">
+          <h3>Resident Evil 5 – SRT</h3>
+          <p>HP · Currency · DA · Enemy HP · Kill Tracker · Rank Feedback · (Inventory WIP)</p>
+        </div>
+        <button class="bookmark-btn" aria-label="Merken">
+          <i class="fas fa-bookmark"></i>
+        </button>
+      </div>
+    </article>
+
+    <!-- Resident Evil 6 SRT -->
+    <article class="portfolio-item" data-id="re6srt" data-category="srt">
+      <div class="portfolio-card">
+        <div class="portfolio-image"><img src="/src/assets/images/RE6.jpg" alt="Resident Evil 6" /></div>
+        <div class="portfolio-overlay">
+          <h3>Resident Evil 6 – SRT</h3>
+          <p>Player HP · Currency · DA · Enemy HP</p>
+        </div>
+        <button class="bookmark-btn" aria-label="Merken">
+          <i class="fas fa-bookmark"></i>
+        </button>
+      </div>
+    </article>
+
+    <!-- Resident Evil 7 SRT -->
+    <article class="portfolio-item" data-id="re7srt" data-category="srt">
+      <div class="portfolio-card">
+        <div class="portfolio-image"><img src="/src/assets/images/RE7.jpg" alt="Resident Evil 7" /></div>
+        <div class="portfolio-overlay">
+          <h3>Resident Evil 7 – SRT</h3>
+          <p>Player HP · Enemy HP · Inventory</p>
+        </div>
+        <button class="bookmark-btn" aria-label="Merken">
+          <i class="fas fa-bookmark"></i>
+        </button>
+      </div>
+    </article>
+
+    <!-- The Evil Within SRT -->
+    <article class="portfolio-item" data-id="tewsrt" data-category="srt">
+      <div class="portfolio-card">
+        <div class="portfolio-image"><img src="/src/assets/images/TEW.jpg" alt="The Evil Within" /></div>
+        <div class="portfolio-overlay">
+          <h3>The Evil Within – SRT</h3>
+          <p>Player HP · IGT · Currency · Enemy HP</p>
+        </div>
+        <button class="bookmark-btn" aria-label="Merken">
+          <i class="fas fa-bookmark"></i>
+        </button>
+      </div>
+    </article>
+    
+    <article class="portfolio-item" data-id="srt" data-category="srtpluginmanager">
+      <div class="portfolio-card" data-modal-img="/src/assets/images/SRTPluginManagerHome.png" data-modal-title="SRT Plugin Manager › Home" data-modal-text="Auf der Startseite erhältst du einen Überblick und kannst zu allen weiteren Tabs navigieren.">
+        <div class="portfolio-image"><img src="/src/assets/images/SRTPluginManagerHome.png" alt="PM Home"/></div>
+        <div class="portfolio-overlay"><h3>PM Home</h3><p>Übersichts‑Dashboard.</p></div>
+        <button class="bookmark-btn" aria-label="Merken">
+          <i class="fas fa-bookmark"></i>
+        </button>
+      </div>
+    </article>
+
+    <!-- PM Host -->
+    <article class="portfolio-item" data-id="srthost" data-category="srtpluginmanager">
+      <div class="portfolio-card" data-modal-img="/src/assets/images/SRTPluginManagerHost.png" data-modal-title="SRT Plugin Manager › Host" data-modal-text="Wähle dein Spiel, installiere / update den passenden SRTHost und starte ihn.">
+        <div class="portfolio-image"><img src="/src/assets/images/SRTPluginManagerHost.png" alt="PM Host"/></div>
+        <div class="portfolio-overlay"><h3>PM Host</h3><p>Host Management.</p></div>
+        <button class="bookmark-btn" aria-label="Merken">
+          <i class="fas fa-bookmark"></i>
+        </button>
+      </div>
+    </article>
+
+    <!-- PM Extensions -->
+    <article class="portfolio-item" data-id="srtextensions" data-category="srtpluginmanager">
+      <div class="portfolio-card" data-modal-img="/src/assets/images/SRTPluginManagerExtensions.png" data-modal-title="SRT Plugin Manager › Extensions" data-modal-text="Installiere benötigte Extensions mit einem Klick.">
+        <div class="portfolio-image"><img src="/src/assets/images/SRTPluginManagerExtensions.png" alt="PM Extensions"/></div>
+        <div class="portfolio-overlay"><h3>PM Extensions</h3><p>Erweiterungen.</p></div>
+        <button class="bookmark-btn" aria-label="Merken">
+          <i class="fas fa-bookmark"></i>
+        </button>
+      </div>
+    </article>
+
+    <!-- PM UI -->
+    <article class="portfolio-item" data-id="srtui" data-category="srtpluginmanager">
+      <div class="portfolio-card" data-modal-img="/src/assets/images/SRTPluginManagerInterface.png" data-modal-title="SRT Plugin Manager › User Interfaces" data-modal-text="Installiere ingame Overlays für Live‑Daten‑Anzeige.">
+        <div class="portfolio-image"><img src="/src/assets/images/SRTPluginManagerInterface.png" alt="PM Interfaces"/></div>
+        <div class="portfolio-overlay"><h3>PM UI</h3><p>User Interfaces.</p></div>
+        <button class="bookmark-btn" aria-label="Merken">
+          <i class="fas fa-bookmark"></i>
+        </button>
+      </div>
+    </article>
+
+    <!-- PM Widgets -->
+    <article class="portfolio-item" data-id="srtwidgets" data-category="srtpluginmanager">
+      <div class="portfolio-card" data-modal-img="/src/assets/images/SRTPluginManagerWidgets.png" data-modal-title="SRT Plugin Manager › Widgets" data-modal-text="Widgets ein‑/ausblenden, Stats‑ &amp; Inventory‑URL kopieren.">
+        <div class="portfolio-image"><img src="/src/assets/images/SRTPluginManagerWidgets.png" alt="PM Widgets"/></div>
+        <div class="portfolio-overlay"><h3>PM Widgets</h3><p>Widgets & URLs.</p></div>
+        <button class="bookmark-btn" aria-label="Merken">
+          <i class="fas fa-bookmark"></i>
+        </button>
+      </div>
+    </article>
+  </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+      <h2>Gefällt dir was du siehst?</h2>
+      <p>Ich bin offen für zusammenarbeit, falls du Ideen oder Projekte hast, die du gerne mit mir umsetzen möchtest, melde dich.</p>
+      <div class="cta-actions"><a href="commissions.html" class="btn btn-primary">Commission Work</a><a href="contact.html" class="btn btn-secondary">Benachrichtigen</a></div>
+    </section>
+  </main>
+
+  <!-- FOOTER (Partial) -->
+  <div id="footer"></div>
+
+  <!-- SCRIPTS -->
+  <script type="module" src="/src/assets/js/partials-loader.js"></script>
+  <script type="module" src="/src/assets/js/portfolio-filter.js"></script>
+  <script type="module" src="/src/assets/js/mobile-menu.js"></script>
+  <script type="module" src="/src/assets/js/bookmarks.js"></script>
+</body>
+</html>

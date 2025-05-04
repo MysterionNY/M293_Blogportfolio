@@ -1,0 +1,34 @@
+@use 'variable' as v;      // Farben etc.
+@use 'helpers' as h;   // helpers-Namespace = h
+:root{ --logo-h: 150px; }
+.logo-img{ height: var(--logo-h); max-height: var(--logo-h); width:auto; display:block; }
+
+.logo{ @include h.flex-center(.5rem); font-size:1.5rem; font-weight:800; color:v.$clr-primary; transition:.2s;
+  &:hover{ color:v.$clr-primary-light; }
+}
+
+.site-header{ background:v.$clr-white; box-shadow:v.$shadow-sm; position:sticky; top:0; z-index:1000; }
+.header-inner{ @include h.flex-between; padding:0 .75rem; height:80px; }
+
+.site-nav{ display:flex; gap:2rem; font-weight:500;
+  a{ color:v.$clr-dark; position:relative;
+     &.active{ color:v.$clr-primary; }
+     &::after{ content:""; position:absolute; left:0; bottom:-.25rem; width:0; height:2px; background:v.$clr-primary; transition:.3s; }
+     &:hover::after{ width:100%; }
+  }
+}
+
+.burger{ font-size:1.5rem; color:v.$clr-dark; display:none; }
+@media (max-width:768px){
+  .site-nav{ display:none; }
+  .burger{ display:block; }
+}
+
+/* MOBILE MENU */
+.mobile-menu{ position:fixed; top:0; right:0; width:70%; max-width:280px; height:100vh; background:#111; box-shadow:-2px 0 8px rgba(0,0,0,.35); display:flex; flex-direction:column; padding:4rem 1.5rem; gap:1rem; transform:translateX(100%); transition:transform .35s ease; z-index:900;
+  &[hidden]{ display:none; }
+  &.open{ transform:translateX(0); }
+  a{ color:#fff; font-size:1.1rem; font-weight:600;
+     &.active,&:hover{ color:v.$clr-primary; }
+  }
+}

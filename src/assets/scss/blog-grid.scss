@@ -1,0 +1,30 @@
+@use 'variable' as v;
+@use 'helpers'   as h;
+.blog-grid{
+    display:grid;gap:2rem;
+    @media(min-width:768px){grid-template-columns:repeat(2,1fr)}
+    @media(min-width:1024px){grid-template-columns:repeat(3,1fr)}
+  }
+  
+  /* Generic Card (older blog preview) */
+  .card{
+    background:v.$clr-white;border-radius:v.$radius-md;box-shadow:v.$shadow-md;overflow:hidden;transition:box-shadow .3s;
+    &:hover{box-shadow:0 6px 18px rgba(0,0,0,.14)}
+    .card-content{padding:1.25rem}
+    .card-meta{font-size:.8rem;color:v.$clr-primary;display:block;margin-bottom:.5rem}
+    h3{font-size:1.25rem;font-weight:700;margin-bottom:.5rem}
+    p{font-size:.925rem;color:v.$clr-gray;margin-bottom:1rem}
+    .card-link{color:v.$clr-primary;font-weight:600;font-size:.9rem;&:hover{text-decoration:underline}}
+  }
+  
+  /* New Post‑Card design (blog.html) */
+  .post-card{
+    background:v.$clr-white;border-radius:v.$radius-md;overflow:hidden;box-shadow:v.$shadow-md;display:flex;flex-direction:column;
+    .post-img{width:100%;height:220px;object-fit:cover}
+    .post-body{padding:1.25rem;@include h.flex-between;flex-direction:column;gap:.6rem;flex:1}
+    .post-meta{font-size:.8rem;color:v.$clr-primary;text-transform:uppercase}
+    .post-title{font-size:1.25rem;font-weight:700}
+    .post-excerpt{font-size:.95rem;color:v.$clr-gray;flex:1}
+    .post-link{color:v.$clr-primary;font-weight:600;font-size:.9rem;&:hover{text-decoration:underline}}
+  }
+  

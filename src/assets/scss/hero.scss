@@ -1,0 +1,18 @@
+@use 'variable';      // Farben etc.
+@use 'helpers' as h;   // helpers-Namespace = h
+
+.blog-hero{
+  background:linear-gradient(90deg, variable.$clr-primary 0%, variable.$clr-gradient-to 100%);
+  color:variable.$clr-white;
+  border-radius:variable.$radius-lg;
+  padding:3rem 2rem;
+  margin:3rem 0 4rem;
+
+  h1{font-size:clamp(2.25rem,4vw,3rem);font-weight:800;margin-bottom:1rem}
+  p{font-size:1.25rem;margin-bottom:2rem}
+
+  .blog-hero-actions{
+    @include h.flex-center(1rem);   // <— Namespace vorangestellt!
+    flex-wrap:wrap;
+  }
+}

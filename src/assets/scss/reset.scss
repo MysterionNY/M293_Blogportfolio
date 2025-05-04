@@ -1,0 +1,7 @@
+@use 'variable' as v;
+*{box-sizing:border-box;margin:0;padding:0}
+img{display:block;max-width:100%;height:auto}
+ul{list-style:none}
+a{text-decoration:none;color:inherit}
+button,input,textarea{font:inherit}
+body{background:v.$clr-light;color:v.$clr-dark;line-height:1.6;font-family:'Inter',system-ui,sans-serif;scroll-behavior:smooth}

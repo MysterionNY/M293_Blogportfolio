@@ -1,0 +1,152 @@
+/* ─────────── CSS VARIABLES ─────────── */
+:root{
+    --clr-primary:#4f46e5;          /* indigo-600 */
+    --clr-primary-light:#6366f1;
+    --clr-gradient-to:#8b5cf6;      /* purple-600 */
+    --clr-dark:#1f2937;
+    --clr-gray:#6b7280;
+    --clr-light:#f9fafb;
+    --clr-white:#ffffff;
+    --radius-sm:.375rem;
+    --radius-md:.75rem;
+    --radius-lg:1.25rem;
+    --shadow-sm:0 1px 3px rgba(0,0,0,.07);
+    --shadow-md:0 4px 12px rgba(0,0,0,.1);
+    --max-width:1100px;
+    font-family:\"Inter\",system-ui,sans-serif;
+    scroll-behavior:smooth;
+  }
+  /* ─────────── GLOBAL RESETS ─────────── */
+  *{box-sizing:border-box;margin:0;padding:0}
+  img{display:block;max-width:100%;height:auto}
+  a{text-decoration:none;color:inherit}
+  ul{list-style:none}
+  button{font:inherit;cursor:pointer;background:none;border:none}
+  
+  /* ─────────── LAYOUT HELPERS ─────────── */
+  .container{width:min(90%,var(--max-width));margin-inline:auto}
+  body{background:var(--clr-light);color:var(--clr-dark);line-height:1.6}
+  
+  /* ─────────── INTRO SECTION ─────────── */
+  .intro{text-align:center;margin-top:3.5rem}
+  .intro h1{font-size:clamp(2.25rem,4vw,3rem);font-weight:800;margin-bottom:1rem}
+  .intro p{font-size:1.25rem;color:var(--clr-gray)}
+  .filters{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:2rem}
+  .filter-btn{padding:.5rem 1rem;border:1px solid var(--clr-gray);border-radius:var(--radius-sm);background:var(--clr-white);color:var(--clr-dark);transition:.2s}
+  .filter-btn:hover{background:var(--clr-light)}
+  .filter-btn.active{background:var(--clr-primary);border-color:var(--clr-primary);color:var(--clr-white)}
+  
+  /* ─────────── PORTFOLIO GRID ─────────── */
+  .portfolio-grid{display:grid;gap:2rem;margin-top:3.5rem}
+  @media(min-width:640px){.portfolio-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.portfolio-grid{grid-template-columns:repeat(3,1fr)}}
+  
+  .portfolio-card{position:relative;overflow:hidden;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);background:var(--clr-white)}
+  .portfolio-image img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .portfolio-card:hover .portfolio-image img{transform:scale(1.08)}
+  .portfolio-overlay{position:absolute;inset:0;background:rgba(0,0,0,.7);color:var(--clr-white);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:1.5rem;opacity:0;transition:opacity .35s}
+  .portfolio-card:hover .portfolio-overlay{opacity:1}
+  .portfolio-overlay h3{font-size:1.5rem;font-weight:700;margin-bottom:.5rem}
+  .portfolio-overlay p{font-size:.9rem;margin-bottom:1rem}
+  .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+  .tags span{background:rgba(255,255,255,.15);padding:.25rem .6rem;border-radius:var(--radius-sm);font-size:.75rem}
+  .view-project-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border-radius:var(--radius-sm);background:var(--clr-primary-light);color:var(--clr-white);font-weight:600;font-size:.9rem}
+  .view-project-btn:hover{background:var(--clr-primary)}
+  
+  /* ─────────── BUTTONS ─────────── */
+  .btn{display:inline-block;padding:.65rem 1.4rem;border-radius:var(--radius-sm);font-weight:600;text-align:center}
+  .btn-primary{background:var(--clr-primary);color:var(--clr-white)}
+  .btn-primary:hover{background:var(--clr-primary-light)}
+  .btn-secondary{border:2px solid var(--clr-primary);color:var(--clr-primary)}
+  .btn-secondary:hover{background:var(--clr-primary);color:var(--clr-white)}
+  
+  /* ─────────── CTA SECTION ─────────── */
+  .cta{background:var(--clr-light);border-radius:var(--radius-lg);padding:3rem 1.5rem;margin-top:5rem;text-align:center}
+  .cta h2{font-size:2rem;font-weight:700;margin-bottom:1rem}
+  .cta p{max-width:38rem;margin-inline:auto;color:var(--clr-gray);margin-bottom:2rem}
+  .cta-actions{display:flex;flex-direction:column;gap:1rem;align-items:center}
+  @media(min-width:480px){.cta-actions{flex-direction:row;justify-content:center}}
+  
+  /* ─────────── UTILITIES (if needed) ─────────── */
+  .text-center{text-align:center}
+  .mt-0{margin-top:0}
+  
+
+/* ───── Sliding-Overlay ───── */
+.portfolio-card { position: relative; overflow: hidden; }
+
+.portfolio-image{position:relative;overflow:hidden;}
+.portfolio-image::before{content:"";display:block;padding-bottom:166%;}
+.portfolio-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+
+.portfolio-card:hover .portfolio-image img {
+  transform: scale(1.08);
+}
+
+/* Startzustand: Overlay ist unter dem Bild versteckt */
+.portfolio-overlay{
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  background: var(--clr-white);
+  color: var(--clr-dark);
+  padding: 2rem 1.5rem;
+  max-height: 100%;
+  overflow-y: auto;
+
+  /* >>> Animation */
+  transform: translateY(102%);
+  transition: transform .3s ease-in-out;
+}
+
+/* Beim Hover / Fokus hochsliden */
+.portfolio-card:hover .portfolio-overlay,
+.portfolio-card:focus-within .portfolio-overlay{
+  transform: translateY(0);
+}
+
+/* Kleiner Farbakzent für Links/Buttons im Overlay */
+.portfolio-overlay a{
+  color: var(--clr-primary);
+}
+.portfolio-overlay a:hover{
+  text-decoration: underline;
+}
+
+.pm-modal{position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;z-index:1000;opacity:0;pointer-events:none;transition:opacity .25s}
+.pm-modal.open{opacity:1;pointer-events:auto}
+.pm-modal-content{background:#000;border-radius:8px;max-width:1100px;width:95%;max-height:90vh;display:flex;flex-wrap:wrap;overflow:hidden}
+.pm-modal-img{flex:3 1 60%;object-fit:cover;width:100%;height:auto}
+.pm-modal-text{flex:1 1 40%;padding:1.5rem;color:#fff;overflow-y:auto}
+.pm-modal-close{position:absolute;top:10px;right:20px;font-size:2rem;color:#fff;cursor:pointer}
+
+.blog-hero{background:linear-gradient(90deg,var(--clr-primary),var(--clr-gradient-to));color:#fff;border-radius:var(--radius-lg);padding:3rem 2rem;margin-top:3rem;text-align:center}
+    .blog-hero h1{font-size:clamp(2.25rem,4vw,3rem);font-weight:800;margin-bottom:1rem}
+    .blog-hero p{font-size:1.15rem;max-width:46rem;margin-inline:auto}
+    .blog-grid{display:grid;gap:2rem;margin-top:2rem}
+    @media(min-width:768px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1024px){.blog-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* Bookmark head button */
+.bookmark-head-btn{background:none;border:none;font-size:1.25rem;position:relative;color:var(--clr-white)}
+#bookmark-count{position:absolute;top:-6px;right:-10px;background:#ef4444;color:#fff;
+                font-size:.7rem;border-radius:999px;padding:0 .35rem}
+
+/* Card button */
+.bookmark-btn{position:absolute;top:.5rem;right:.5rem;background:#fff;border-radius:50%;border:none;
+              width:36px;height:36px;display:flex;align-items:center;justify-content:center;
+              color:var(--clr-gray);box-shadow:var(--shadow-sm);transition:.2s}
+.bookmark-btn.active,.bookmark-btn:hover{color:var(--clr-primary)}
+.portfolio-card{position:relative} /* ensure absolute pos */
+
+/* Drawer */
+#bookmark-drawer{z-index:1200}
+#bookmark-drawer .bm-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.5);opacity:0;
+                              transition:.25s;pointer-events:none}
+#bookmark-drawer.open .bm-backdrop{opacity:1;pointer-events:auto}
+#bookmark-drawer .bm-panel{position:fixed;right:-100%;top:0;padding:2rem 1.5rem;width:320px;
+                           height:100vh;background:#fff;overflow-y:auto;transition:.3s}
+#bookmark-drawer.open .bm-panel{right:0}
+#bookmark-drawer header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+#bookmark-drawer h2{font-size:1.3rem}
+#bookmark-drawer ul{display:flex;flex-direction:column;gap:1rem}
+#bookmark-drawer .bm-empty{color:var(--clr-gray)}

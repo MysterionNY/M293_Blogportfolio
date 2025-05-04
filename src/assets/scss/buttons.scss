@@ -1,0 +1,4 @@
+@use 'variable' as v;
+.btn{padding:.7rem 1.6rem;border-radius:v.$radius-sm;font-weight:600;display:inline-block;text-align:center;white-space:nowrap}
+.btn-primary{background:v.$clr-primary;color:v.$clr-white;&:hover{background:v.$clr-primary-light}}
+.btn-secondary{border:2px solid v.$clr-primary;color:v.$clr-primary;&:hover{background:v.$clr-primary;color:v.$clr-white}}

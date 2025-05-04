@@ -1,0 +1,9 @@
+@use 'variable' as v;
+@use 'helpers'   as h;
+
+.section{margin-bottom:4.5rem}
+.section-heading{
+  @include h.flex-center(.75rem);
+  font-size:1.875rem;font-weight:700;margin-bottom:2rem;
+  i{color:v.$clr-primary}
+}

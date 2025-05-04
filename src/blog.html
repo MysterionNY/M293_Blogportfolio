@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="/src/assets/css/main.css" />
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="container">
+    <section class="blog-hero">
+      <h1>Developer Notes & Project Logs</h1>
+      <p>Ein Blick hinter die Kulissen: Fortschritte, technische Deep‑Dives und Gedanken rund um Speedrun‑Tools.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-heading"><i class="fas fa-pen-fancy"></i> Posts</h2>
+      <div class="blog-grid">
+        <!-- Post 1 -->
+        <article class="post-card">
+          <img src="/src/assets/images/dmc4.jpg" alt="DMC4 Memory" class="post-img" />
+          <div class="post-body">
+            <span class="post-meta">Memory-Hacking • 04 May 2025</span>
+            <h3 class="post-title">Signature Scans in Devil May Cry 4 SE</h3>
+            <p class="post-excerpt">Wie ich stabile Pointer für den Spear‑Room gefunden habe – inkl. Pattern‑Beispiel und Tools.</p>
+            <a href="#" class="post-link" data-modal="post1">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="post-card">
+          <img src="/src/assets/images/SRTPluginManagerHome.png" alt="SRT Overlay" class="post-img" />
+          <div class="post-body">
+            <span class="post-meta">Overlay-Design • 27 Apr 2025</span>
+            <h3 class="post-title">Vom Raw‑Memory zum schicken UI: Mein SRT‑Workflow</h3>
+            <p class="post-excerpt">Schritt‑für‑Schritt, wie ich Daten parse, normalisiere und in React‑Overlays visualisiere.</p>
+            <a href="#" class="post-link" data-modal="post2">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="post-card">
+          <img src="/src/assets/images/LS.png" alt="Load Remover" class="post-img" />
+          <div class="post-body">
+            <span class="post-meta">Timing • 12 Apr 2025</span>
+            <h3 class="post-title">Load‑Remover vs IGT – Was misst eigentlich LRT?</h3>
+            <p class="post-excerpt">Ein Vergleich der gängigen Timing‑Methoden und warum LRT nicht immer die Lösung ist.</p>
+            <a href="#" class="post-link" data-modal="post3">Read More →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <!-- Modals -->
+  <div class="post-modal" id="post1">
+    <div class="post-modal-content">
+      <span class="post-modal-close">&times;</span>
+      <img src="/src/assets/images/DMC4.jpg" class="post-modal-img" alt="DMC4" />
+      <div class="post-modal-body">
+        <h2>Signature Scans in Devil May Cry 4 SE</h2>
+        <p>Als ich den Autosplitter für <em>Devil May Cry 4 Special Edition</em> angefangen habe, merkte ich schnell, dass die gewohnten statischen Pointer bei jedem Patch verrutschten. Die Lösung: <strong>Signature Scans</strong>. In diesem Artikel zeige ich – Schritt für Schritt – wie man einen stabilen Pattern-Scan erstellt.</p>
+        <p>Wir beginnen mit <code>Cheat Engine</code>, um die statische Adresse des Spear‑Rooms zu finden. Anschliessend exportieren wir die umgebenden Bytes als AOB‑Pattern und testen das Ganze in C++.</p>
+        <h3>1 · Pattern extrahieren</h3>
+        <p>Mit <code>Ctrl+A</code> markieren wir 32 Bytes rund um die Adresse und ersetzen die variablen Stellen durch Wildcards <code>??</code>. Wichtig ist, den Funktions‑Prolog (meist <code>55 8B EC</code>) mitzunehmen, da er in jeder Version gleich bleibt.</p>
+        <h3>2 · Scan implementieren</h3>
+        <p>Im Autosplitter rufen wir dann:</p>
+        <pre><code>uintptr_t addr = pattern::find("55 8B EC 83 EC ?? 56 8B 75 ?? 8B CE");</code></pre>
+        <p>Beim ersten Versuch fand der Scan drei Treffer – nach ein wenig Trial‑and‑Error mit längeren Wildcards blieb nur noch eine eindeutige Adresse übrig.</p>
+        <h3>3 · Fallback & Logging</h3>
+        <p>Ich empfehle, bei Fehlschlag auf <code>nullptr</code> zu prüfen und einen Log‑Eintrag auszugeben. So erkennt der Nutzer sofort, dass der Splitter ein Update braucht.</p>
+        <p>Mit dieser Methode überstehen die Pointer bereits drei offizielle Patches – und ich muss nur das Pattern aktualisieren, wenn Capcom die Funktion komplett umbaut.</p>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-modal" id="post2">
+    <div class="post-modal-content">
+      <span class="post-modal-close">&times;</span>
+      <img src="/src/assets/images/SRTPluginManagerHome.png" class="post-modal-img" alt="SRT" />
+      <div class="post-modal-body">
+        <h2>Vom Raw‑Memory zum schicken UI: Mein SRT‑Workflow</h2>
+        <p>Ein funktionierender SRT besteht zu 50 % aus Reverse‑Engineering und zu 50 % aus UX‑Design. Hier ein Blick auf meinen typischen Ablauf von der ersten Memory‑Adresse bis zur fertigen React‑Overlay‑Komponente.</p>
+        <h3>1 · Data Mining</h3>
+        <p>Mit <code>IDA Pro</code> und <code>ReClass .NET</code> suche ich zuerst die relevanten Strukturen: Player‑Struct, Enemy‑Array, Timer usw. Ich dokumentiere alles direkt in einem JSON‑Schema.</p>
+        <h3>2 · Normalisierung</h3>
+        <p>Das SRTHost liest rohen Speicher und wandelt ihn in eine leichtgewichtige WebSocket‑API um. Dabei werden Werte wie HP noch nicht gerundet – das geschieht erst im Frontend.</p>
+        <h3>3 · Frontend</h3>
+        <p>Im UI trenne ich Logik (Hooks) und Darstellung (Styled Components). Für den Live‑Sync reicht ein einfacher <code>useWebSocket</code>‑Hook. Wichtig: Animationen auf CSS‑Basis, damit schwächere PCs nicht zusätzlich belastet werden.</p>
+        <p>Am Ende hat der Runner ein sauberes Overlay, das selbst auf 4:3‑Setups oder Ultrawide noch korrekt skaliert.</p>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-modal" id="post3">
+    <div class="post-modal-content">
+      <span class="post-modal-close">&times;</span>
+      <img src="/src/assets/images/LS.png" class="post-modal-img" alt="LRT" />
+      <div class="post-modal-body">
+        <h2>Load‑Remover vs IGT – Was misst eigentlich LRT?</h2>
+        <p>Seit <em>Resident Evil 2 (2019)</em> ist der Begriff „LRT“ in aller Munde. Doch was genau unterscheidet einen klassischen In‑Game‑Timer von einem Load‑Remover?</p>
+        <h3>IGT (Internal Game Time)</h3>
+        <p>IGT wird vom Spiel selbst gezählt. Vorteil: Absolut fälschungssicher. Nachteil: Nicht jedes Spiel aktualisiert den Wert frame‑genau oder speichert zwischen.</p>
+        <h3>LRT (Load Removal Time)</h3>
+        <p>Hier misst LiveSplit die reale Zeit und zieht erkannte Ladebildschirme ab. Diese Methode funktioniert für fast jedes PC‑Spiel, benötigt aber zuverlässige Trigger – z. B. schwarzer Bildschirm & 0‑FPS oder bestimmte Memory‑Flags.</p>
+        <p><strong>Fazit:</strong> Wenn ein Spiel einen präzisen IGT bietet (DMC 5), ist das oft die beste Wahl. Fehlt er, liefert ein Load‑Remover sehr vergleichbare Zeiten – vorausgesetzt, alle Loads werden sauber erkannt.</p>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/assets/js/partials-loader.js"></script>
+  <script type="module" src="/src/assets/js/mobile-menu.js"></script>
+  <script type="module" src="/src/assets/js/blog-loader.js"></script>
+</body>
+</html>
