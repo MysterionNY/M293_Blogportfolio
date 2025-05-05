@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vom Raw-Memory zum schicken UI: Mein SRT-Workflow</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="container post-container">
+    <article class="post-detail">
+      <img src="images/SRTPluginManagerHome.png" class="post-detail-img" alt="SRT Overlay">
+      <h1>Vom Raw-Memory zum schicken UI: Mein SRT-Workflow</h1>
+      <span class="post-meta">Overlay-Design • 27 Apr 2025</span>
+
+      <p>Ein funktionierender SRT besteht zu 50 % aus Reverse-Engineering und zu 50 % aus UX-Design. Hier ein Blick auf meinen typischen Ablauf von der ersten Memory-Adresse bis zur fertigen React-Overlay-Komponente.</p>
+
+      <h2>1 · Data Mining</h2>
+      <p>Mit <code>IDA Pro</code> und <code>ReClass .NET</code> suche ich zuerst die relevanten Strukturen: Player-Struct, Enemy-Array, Timer usw. Ich dokumentiere alles direkt in einem JSON-Schema.</p>
+
+      <h2>2 · Normalisierung</h2>
+      <p>Das SRTHost liest rohen Speicher und wandelt ihn in eine leichtgewichtige WebSocket-API um. Dabei werden Werte wie HP noch nicht gerundet – das geschieht erst im Frontend.</p>
+
+      <h2>3 · Frontend</h2>
+      <p>Im UI trenne ich Logik (Hooks) und Darstellung (Styled Components). Für den Live-Sync reicht ein einfacher <code>useWebSocket</code>-Hook. Wichtig: Animationen auf CSS-Basis, damit schwächere PCs nicht zusätzlich belastet werden.</p>
+
+      <p>Am Ende hat der Runner ein sauberes Overlay, das selbst auf 4:3-Setups oder Ultrawide noch korrekt skaliert.</p>
+
+      <a href="index.html" class="back-link">← Zurück zur Blogübersicht</a>
+    </article>
+  </main>
+
+  <div id="footer"></div>
+
+  <script type="module" src="js/partials-loader.js"></script>
+  <script type="module" src="js/mobile-menu.js"></script>
+</body>
+</html>

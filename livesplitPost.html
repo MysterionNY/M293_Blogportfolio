@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Load-Remover vs IGT – Was misst eigentlich LRT?</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="container post-container">
+    <article class="post-detail">
+      <img src="images/LS.png" class="post-detail-img" alt="Load Remover">
+      <h1>Load-Remover vs IGT – Was misst eigentlich LRT?</h1>
+      <span class="post-meta">Timing • 12 Apr 2025</span>
+
+      <p>Seit <em>Resident Evil 2 (2019)</em> ist der Begriff „LRT“ in aller Munde. Doch was genau unterscheidet einen klassischen In-Game-Timer von einem Load-Remover?</p>
+
+      <h2>IGT (Internal Game Time)</h2>
+      <p>IGT wird vom Spiel selbst gezählt. Vorteil: Absolut fälschungssicher. Nachteil: Nicht jedes Spiel aktualisiert den Wert frame-genau oder speichert zwischen.</p>
+
+      <h2>LRT (Load Removal Time)</h2>
+      <p>Hier misst LiveSplit die reale Zeit und zieht erkannte Ladebildschirme ab. Diese Methode funktioniert für fast jedes PC-Spiel, benötigt aber zuverlässige Trigger – z. B. schwarzer Bildschirm & 0-FPS oder bestimmte Memory-Flags.</p>
+
+      <p><strong>Fazit:</strong> Wenn ein Spiel einen präzisen IGT bietet (DMC 5), ist das oft die beste Wahl. Fehlt er, liefert ein Load-Remover sehr vergleichbare Zeiten – vorausgesetzt, alle Loads werden sauber erkannt.</p>
+
+      <a href="index.html" class="back-link">← Zurück zur Blogübersicht</a>
+    </article>
+  </main>
+
+  <div id="footer"></div>
+
+  <script type="module" src="js/partials-loader.js"></script>
+  <script type="module" src="js/mobile-menu.js"></script>
+</body>
+</html>

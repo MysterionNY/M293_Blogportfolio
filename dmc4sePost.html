@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signature Scans in Devil May Cry 4 SE</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="container post-container">
+    <article class="post-detail">
+      <img src="images/DMC4.jpg" class="post-detail-img" alt="DMC4">
+      <h1>Signature Scans in Devil May Cry 4 SE</h1>
+      <span class="post-meta">Memory-Hacking • 04 May 2025</span>
+      
+      <p>Als ich den Autosplitter für <em>Devil May Cry 4 Special Edition</em> angefangen habe, merkte ich schnell, dass die gewohnten statischen Pointer bei jedem Patch verrutschten. Die Lösung: <strong>Signature Scans</strong>. In diesem Artikel zeige ich – Schritt für Schritt – wie man einen stabilen Pattern-Scan erstellt.</p>
+
+      <h2>1 · Pattern extrahieren</h2>
+      <p>Mit <code>Ctrl+A</code> markieren wir 32 Bytes rund um die Adresse und ersetzen die variablen Stellen durch Wildcards <code>??</code>. Wichtig ist, den Funktions-Prolog (meist <code>55 8B EC</code>) mitzunehmen, da er in jeder Version gleich bleibt.</p>
+
+      <h2>2 · Scan implementieren</h2>
+      <p>Im Autosplitter rufen wir dann:</p>
+      <pre><code>uintptr_t addr = pattern::find("55 8B EC 83 EC ?? 56 8B 75 ?? 8B CE");</code></pre>
+
+      <p>Beim ersten Versuch fand der Scan drei Treffer – nach ein wenig Trial-and-Error mit längeren Wildcards blieb nur noch eine eindeutige Adresse übrig.</p>
+
+      <h2>3 · Fallback & Logging</h2>
+      <p>Ich empfehle, bei Fehlschlag auf <code>nullptr</code> zu prüfen und einen Log-Eintrag auszugeben. So erkennt der Nutzer sofort, dass der Splitter ein Update braucht.</p>
+      
+      <p>Mit dieser Methode überstehen die Pointer bereits drei offizielle Patches – und ich muss nur das Pattern aktualisieren, wenn Capcom die Funktion komplett umbaut.</p>
+      
+      <a href="index.html" class="back-link">← Zurück zur Blogübersicht</a>
+    </article>
+  </main>
+
+  <div id="footer"></div>
+
+  <script type="module" src="js/partials-loader.js"></script>
+  <script type="module" src="js/mobile-menu.js"></script>
+</body>
+</html>
